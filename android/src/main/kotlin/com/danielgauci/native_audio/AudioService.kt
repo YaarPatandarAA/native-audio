@@ -361,7 +361,7 @@ class AudioService : Service() {
 
             // Add rewind action
             val rewindAction = NotificationCompat.Action.Builder(
-                    android.R.drawable.ic_media_previous,
+                    R.drawable.previous_media,
                     "Rewind",
                     MediaButtonReceiver.buildMediaButtonPendingIntent(this@AudioService, PlaybackStateCompat.ACTION_SKIP_TO_PREVIOUS)
             ).build()
@@ -369,7 +369,7 @@ class AudioService : Service() {
 
             // Add play/pause action
             val playPauseAction = NotificationCompat.Action.Builder(
-                    if (isPlaying) android.R.drawable.ic_media_pause else android.R.drawable.ic_media_play,
+                    if (isPlaying) R.drawable.pause else R.drawable.play,
                     if (isPlaying) "Pause" else "Play",
                     MediaButtonReceiver.buildMediaButtonPendingIntent(this@AudioService, PlaybackStateCompat.ACTION_PLAY_PAUSE)
             ).build()
@@ -377,7 +377,7 @@ class AudioService : Service() {
 
             // Add fast forward action
             val forwardAction = NotificationCompat.Action.Builder(
-                    android.R.drawable.ic_media_next,
+                    R.drawable.next_media,
                     "Fast Forward",
                     MediaButtonReceiver.buildMediaButtonPendingIntent(this@AudioService, PlaybackStateCompat.ACTION_SKIP_TO_NEXT)
             ).build()
