@@ -461,7 +461,7 @@ class AudioService : Service() {
             setNotificationButtons(notificationBuilder, isPlaying())
 
             // Allow notification to be dismissed if not playing
-            notificationBuilder.setOngoing(isPlaying())
+//            notificationBuilder.setOngoing(isPlaying())
 
             if (isPlaying() && stateChanged) {
                 // Update notification and ensure that notification is in foreground as it could have been stopped before
