@@ -14,6 +14,9 @@ import io.flutter.plugin.common.PluginRegistry
 import io.flutter.plugin.common.PluginRegistry.Registrar
 import io.flutter.view.FlutterNativeView
 
+var serviceConnection_GLOBAL: ServiceConnection? = null
+var context_GLOBAL: Context? = null
+
 class NativeAudioPlugin(
         private val context: Context,
         private val channel: MethodChannel
@@ -134,6 +137,9 @@ class NativeAudioPlugin(
             val serviceIntent = Intent(context, AudioService::class.java)
             if (!context.isServiceRunning(AudioService::class.java)) context.startService(serviceIntent)
             context.bindService(serviceIntent, serviceConnection, Context.BIND_AUTO_CREATE)
+
+            context_GLOBAL = context
+            serviceConnection_GLOBAL = serviceConnection
 
             // Return and wait for service to be connected
             return
