@@ -85,29 +85,3 @@ As well as the following lines to setup the permissions required:
 No additional setup is required for iOS 🍏
 
 No setup is required for iOS 🍏
-
-## Using Next/Previous Function
-
-These two function require the developer to manually implement what they will do when called. On the Android/iOS they are acessable via the Notification/Command Center Media Controls for the respective OS. When the user clicks on Next/Previous in the Notification or the Command Center Media Controls it will send a signal to the Dart/Flutter code where it will perform what ever task, you, the Develeper have set for it.
-
-### example
-```dart
-var _audio = NativeAudio();
-var _status = "stopped";
-...
-...
-_audio.onPrevious = () {
-    setState(() {
-        _status = "previous";
-    });
-    //Do what you want on Flutter side
-};
-
-_audio.onNext = () {
-    setState(() {
-        _status = "next";
-    });
-    //Do what you want on Flutter side
-};
-...
-```
